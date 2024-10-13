@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Spam Protection",
+        "description": "This rule detects repeated characters in a message.",
+        "regex": "/(.)\\1{4,}/g",
+        "example": "\"heyyyyyyy\" or \"woooowww\"",
+        "category": "Spam"
+    },
+    {
+        "title": "Profanity Filter",
+        "description": "This rule blocks offensive words.",
+        "regex": "/(badword|offensiveword)/gi",
+        "example": "Matches common offensive terms.",
+        "category": "Content Filtering"
+    },
+    {
+        "title": "Link Detection",
+        "description": "This rule detects URLs and prevents users from posting links.",
+        "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+        "example": "\"http://example.com\" or \"https://discord.gg/abcdef\"",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "Mention Spam Detection",
+        "description": "This rule blocks users from spamming mentions.",
+        "regex": "/@\\w+/g",
+        "example": "\"@everyone\" or \"@username\"",
+        "category": "Spam"
+    },
+    {
+        "title": "Caps Lock Detection",
+        "description": "This rule detects if a message is written in all capital letters.",
+        "regex": "/^[A-Z\\s]+/g",
+        "example": "\"HELLO THERE\" or \"THIS IS SPARTA\"",
+        "category": "Spam"
+    },
+    {
+        "title": "Discord Invite Link Detection",
+        "description": "This rule detects Discord invite links in messages.",
+        "regex": "https?:\\/\\/(www\\.)?(discord\\.(gg|com)\\/invite|discordapp\\.com\\/invite)\\/([a-zA-Z0-9]{1,})",
+        "example": "\"https://discord.gg/abcdef\" or \"discord.com/invite/xyz123\"",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "Role Mention Blocker",
+        "description": "This rule blocks role mentions.",
+        "regex": "/<@&[0-9]+>/g",
+        "example": "<@&1234567890>.",
+        "category": "Mention Filtering"
+    },
+    {
+        "title": ".zip Link Blocker",
+        "description": "This rule blocks .zip links.",
+        "regex": "/(http\\w?:\\/\\/\\S*\\.zip)/g",
+        "example": "file.zip",
+        "category": "Link Filtering"
+    },
+    {
+        "title": ".exe Link Blocker",
+        "description": "This rule blocks .zip links.",
+        "regex": "/(http\\w?:\\/\\/\\S*\\.exe)/g",
+        "example": "file.exe",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "Inline URL Blocker",
+        "description": "This rule blocks inline URLs.",
+        "regex": "/(?m)((\\[.+\\]\\(\\w+\\:\\/\\/.+\\)))/g",
+        "example": "[example](http://example.com)",
+        "category": "Link Filtering"
+    }
+]

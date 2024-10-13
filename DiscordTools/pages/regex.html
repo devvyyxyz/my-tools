@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Discord Automod Regex Rules</title>
+    
+    <!-- Prism.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.css">
+</head>
+<body>
+    <header>
+        <h1>Discord AutoMod Regex Showcase</h1>
+        <p>Explore regex rules to enhance your Discord server's auto moderation.</p>
+        <input type="text" id="regex-search" placeholder="Search regex rules...">
+        <select id="category-filter">
+            <option value="">All Categories</option>
+            <option value="Spam">Spam</option>
+            <option value="Content Filtering">Content Filtering</option>
+            <option value="Link Filtering">Link Filtering</option>
+            <option value="Mention Filtering">Mention Filtering</option>
+        </select>
+    </header>
+
+    <main>
+        <div id="regex-list"></div>
+    </main>
+
+    <footer>
+        <p>© 2024 My Tools Website</p>
+    </footer>
+
+    <!-- Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.js"></script>
+    <script src="../js/regex.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Text Generator</title>
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Random Text Generator</h1>
+        <p>Generate random text with your desired parameters.</p>
+    </header>
+
+    <div id="generator" class="generator-container">
+        <div class="param-group">
+            <label for="wordCount">Number of Words:</label>
+            <input type="number" id="wordCount" min="1" value="5">
+        </div>
+
+        <div class="param-group">
+            <label for="sentenceCount">Number of Sentences:</label>
+            <input type="number" id="sentenceCount" min="1" value="1">
+        </div>
+
+        <div class="param-group">
+            <label for="minWordLength">Min Word Length:</label>
+            <input type="number" id="minWordLength" min="1" value="3">
+        </div>
+
+        <div class="param-group">
+            <label for="maxWordLength">Max Word Length:</label>
+            <input type="number" id="maxWordLength" min="1" value="8">
+        </div>
+
+        <div class="param-group">
+            <label for="numLetters">Number of Letters:</label>
+            <input type="number" id="numLetters" min="0" value="0">
+        </div>
+
+        <div class="param-group">
+            <label for="numNumbers">Number of Numbers:</label>
+            <input type="number" id="numNumbers" min="0" value="0">
+        </div>
+
+        <div class="param-group">
+            <label for="numSymbols">Number of Symbols:</label>
+            <input type="number" id="numSymbols" min="0" value="0">
+        </div>
+
+        <div class="param-group toggle-group">
+            <label for="includeNumbers">Include Numbers:</label>
+            <input type="checkbox" id="includeNumbers">
+        </div>
+
+        <div class="param-group toggle-group">
+            <label for="includeSymbols">Include Symbols:</label>
+            <input type="checkbox" id="includeSymbols">
+        </div>
+
+        <div class="param-group toggle-group">
+            <label for="includeLetters">Include Letters:</label>
+            <input type="checkbox" id="includeLetters" checked>
+        </div>
+
+        <button id="generateBtn">Generate Text</button>
+    </div>
+
+    <div id="result" class="result-container">
+        <h2>Generated Text:</h2>
+        <p id="randomText"></p>
+    </div>
+
+    <script src="../js/random-text.js"></script>
+</body>
+</html>
