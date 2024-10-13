@@ -1,0 +1,95 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column; /* Ensure content flows from top to bottom */
+    align-items: center;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-top: 40px; /* Adjust top margin as needed */
+}
+
+.google-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.google-logo img {
+    width: 184px; /* Set width to match Google's logo size */
+    height: 60px; /* Set height to match Google's logo size */
+}
+
+.search-container {
+    margin-top: 20px;
+    max-width: 584px; /* Matches Google's current search bar width */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 584px; /* Matches Google's current search bar width */
+    padding: 10px 16px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    box-shadow: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-buttons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.search-button,
+.feeling-lucky-button {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    color: #3c4043;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Footer styles */
+footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    margin-bottom: 20px; /* Add a bottom margin for separation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    margin: 0 5px;
+    color: #5f6368;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
