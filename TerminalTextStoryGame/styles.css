@@ -1,0 +1,43 @@
+body {
+  background-color: black;
+  color: green;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-end;
+}
+
+#output {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+#input {
+  background-color: black;
+  color: green;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.2em;
+  caret-color: transparent;
+  display: inline;
+}
+
+#input::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: green;
+}
+
+@keyframes blink {
+  from, to {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
