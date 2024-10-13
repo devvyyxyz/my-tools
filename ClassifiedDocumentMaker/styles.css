@@ -1,0 +1,80 @@
+body {
+  font-family: 'Calibri', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.toolbar {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.toolbar-btn {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  color: #555;
+  border-radius: 4px;
+}
+
+.toolbar-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.toolbar-btn i {
+  font-style: italic;
+}
+
+.toolbar-btn u {
+  text-decoration: underline;
+}
+
+.toolbar-btn s {
+  text-decoration: line-through;
+}
+
+.document {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  line-height: 1.6;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.save-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.save-btn:hover {
+  background-color: #0056b3;
+}
+
+.classified {
+  background-color: black;
+  color: black;
+  display: inline-block;
+}
