@@ -1,0 +1,33 @@
+/* comparison.css */
+
+.comparison-section {
+    margin: 20px 0;
+}
+
+.comparison-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comparison-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
+    border: 2px solid #00FF00;
+    padding: 10px;
+    background-color: #000;
+}
+
+.comparison-image {
+    width: 45%;
+    position: relative;
+}
+
+#original-image img, #modified-canvas {
+    width: 100%;
+    border: 2px solid #00FF00;
+}

@@ -1,0 +1,108 @@
+/* main.css */
+
+/* Base styles for light and dark mode */
+body {
+    font-family: 'Press Start 2P', cursive;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #000;
+    color: #00FF00;
+}
+
+header.dark-mode {
+    background: linear-gradient(90deg, #f06, #f79);
+    color: #fff;
+}
+
+h2.dark-mode {
+    color: #ff00ff;
+}
+
+button.dark-mode {
+    background-color: #ff00ff;
+    border: 2px solid #00FF00;
+    color: #fff;
+}
+
+button.dark-mode:hover {
+    background-color: #f06;
+}
+
+input[type="file"].dark-mode {
+    border: 2px solid #00FF00;
+    background-color: #000;
+    color: #fff;
+}
+
+input[type="file"].dark-mode:hover {
+    background-color: #f06;
+}
+
+input[type="range"].dark-mode,
+input[type="number"].dark-mode {
+    color: #00FF00;
+}
+
+.filter-option.dark-mode {
+    background-color: #111;
+    border: 2px solid #00FF00;
+    color: #fff;
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+header.light-mode {
+    background: linear-gradient(90deg, #06f, #79f);
+    color: #000;
+}
+
+h2.light-mode {
+    color: #06f;
+}
+
+button.light-mode {
+    background-color: #06f;
+    border: 2px solid #0000FF;
+    color: #fff;
+}
+
+button.light-mode:hover {
+    background-color: #79f;
+}
+
+input[type="file"].light-mode {
+    border: 2px solid #0000FF;
+    background-color: #fff;
+    color: #000;
+}
+
+input[type="file"].light-mode:hover {
+    background-color: #79f;
+}
+
+input[type="range"].light-mode,
+input[type="number"].light-mode {
+    color: #0000FF;
+}
+
+.filter-option.light-mode {
+    background-color: #eee;
+    border: 2px solid #0000FF;
+    color: #000;
+}

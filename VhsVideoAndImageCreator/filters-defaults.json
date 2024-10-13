@@ -1,0 +1,8 @@
+{
+  "crtFilter": {
+    "intensity": 20
+  },
+  "imageNoise": {
+    "intensity": 50
+  }
+}
