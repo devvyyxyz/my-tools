@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Converter</h1>
+        <div class="converter">
+            <textarea id="input" placeholder="Enter text here..."></textarea>
+            <div class="dropdown">
+                <select id="converterType">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <select id="conversionDirection">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <button onclick="convert()">Convert</button>
+            </div>
+            <textarea id="output" placeholder="Output will appear here..." readonly></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
