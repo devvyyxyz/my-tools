@@ -1,0 +1,86 @@
+body {
+  transition: background-color 0.5s, color 0.5s;
+  font-family: Arial, sans-serif;
+  background-color: white; /* Default light mode background */
+  color: black; /* Default light mode text */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 200px; /* Larger width */
+  height: 100px; /* Larger height */
+  margin-bottom: 20px; /* Space between switch and counter */
+  -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  outline: none; /* Remove outline */
+}
+
+.switch input:focus {
+  outline: none; /* Remove the focus outline */
+}
+
+.switch input:focus-visible {
+  outline: none; /* Remove the focus-visible outline */
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black; /* Switch background color */
+  transition: 0.4s;
+  border-radius: 50px; /* Adjust border-radius for larger size */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 80px; /* Larger height */
+  width: 80px; /* Larger width */
+  left: 10px; /* Adjust position */
+  bottom: 10px; /* Adjust position */
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: white; /* Switch background color when checked */
+}
+
+input:checked + .slider:before {
+  transform: translateX(100px); /* Adjust translateX for larger size */
+  background-color: black; /* Circle color when checked */
+}
+
+#counter {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
