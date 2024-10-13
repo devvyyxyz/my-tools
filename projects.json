@@ -1,0 +1,74 @@
+{
+  "utility": [
+    {
+      "name": "Password Generator",
+      "url": "https://github.com/devvyyxyz/password-generator"
+    },
+    {
+      "name": "Simple API",
+      "url": "https://github.com/devvyyxyz/Simple-api"
+    },
+    {
+      "name": "Discord bot animated avatar",
+      "url": "https://github.com/devvyyxyz/Discord-bot-animated-avatar"
+    },
+    {
+      "name": "Random gen Discord bot",
+      "url": "https://github.com/devvyyxyz/random-gen-discord-bot"
+    }
+  ],
+  "tool": [
+    {
+      "name": "Converters",
+      "url": "https://github.com/devvyyxyz/Converters"
+    },
+    {
+      "name": "VHS video/image creator",
+      "url": "https://github.com/devvyyxyz/VHS-video-and-image-creator"
+    },
+    {
+      "name": "images & audio converter with python",
+      "url": "https://github.com/devvyyxyz/images-and-audio-converter-with-python"
+    }
+  ],
+  "template": [
+    {
+      "name": "Windows 98 Site",
+      "url": "https://github.com/devvyyxyz/windows-98-site"
+    },
+    {
+      "name": "100 python games",
+      "url": "https://github.com/devvyyxyz/100-python-games"
+    },
+    {
+      "name": "repository template",
+      "url": "https://github.com/devvyyxyz/repository-template"
+    }
+  ],
+  "game": [
+    {
+      "name": "Terminal Text Story Game",
+      "url": "https://github.com/devvyyxyz/Terminal-text-story-game"
+    }
+  ],
+  "fun": [
+    {
+      "name": "Google thats actualy Bing",
+      "url": "https://github.com/devvyyxyz/Google-thats-actualy-bing"
+    }
+  ],
+  "misc": [
+    {
+      "name": "fake terminal",
+      "url": "https://github.com/devvyyxyz/fake-terminal"
+    },
+    {
+      "name": "childrens math learning program",
+      "url": "https://github.com/devvyyxyz/childrens-math-learning-program"
+    },
+    {
+      "name": "interactive fake terminal",
+      "url": "https://github.com/devvyyxyz/interactive-fake-terminal"
+    }
+  ]
+}

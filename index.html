@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Projects</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>GitHub Projects</h1>
+
+    <div class="converter">
+      <div class="dropdown">
+        <select id="category">
+          <option value="all">All Categories</option>
+        </select>
+
+        <select id="itemsPerPage">
+          <option value="5">5 per page</option>
+          <option value="10" selected>10 per page</option>
+          <option value="15">15 per page</option>
+          <!-- Add more options as needed -->
+        </select>
+
+        <button id="filterBtn">Filter</button>
+      </div>
+
+      <div id="projectList">
+        <!-- Project cards will be dynamically added here -->
+      </div>
+
+      <div class="pagination">
+        <button id="prevPage">Previous</button>
+        <span>Page <span id="currentPage">1</span> of <span id="totalPages">1</span></span>
+        <button id="nextPage">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="files.js"></script>
+</body>
+</html>
