@@ -11,19 +11,43 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentPage = 1;
   let itemsPerPage = parseInt(itemsPerPageSelect.value);
 
-  // Function to fetch projects from JSON file
+  // Function to fetch projects from subfolders
   async function fetchProjects() {
     try {
       const response = await fetch('projects.json');
       if (!response.ok) {
         throw new Error('Failed to fetch projects');
       }
-      projects = await response.json();
+      const projectFolders = await response.json();
+      if (!Array.isArray(projectFolders)) {
+        throw new TypeError('Fetched data is not an array');
+      }
+      projects = await loadProjectsFromFolders(projectFolders);
       populateCategoryDropdown(); // Populate category dropdown after fetching projects
       updateProjects(); // Update projects immediately on load
     } catch (error) {
       console.error('Error fetching projects:', error);
     }
+  }
+
+  // Function to load projects from folders
+  async function loadProjectsFromFolders(folders) {
+    const projects = {};
+    for (const folder of folders) {
+      const response = await fetch(`${folder}/project.json`);
+      if (response.ok) {
+        const projectData = await response.json();
+        const category = projectData.category || 'uncategorized';
+        if (!projects[category]) {
+          projects[category] = [];
+        }
+        projects[category].push({
+          name: projectData.name,
+          file: `${folder}/${projectData.file}`
+        });
+      }
+    }
+    return projects;
   }
 
   // Function to populate category dropdown with options
@@ -77,8 +101,8 @@ document.addEventListener('DOMContentLoaded', function() {
           <p>Category: ${categorySelect.value}</p>
         </div>
         <div>
-          <a href="${project.url}" target="_blank">View on GitHub</a>
-          <a href="files.html?repo=${encodeURIComponent(project.url)}" class="view-files">View Files</a>
+          <a href="${project.file}" target="_blank">View Project</a>
+          <a href="files.html?repo=${encodeURIComponent(project.file)}" class="view-files">View Files</a>
         </div>
       `;
       projectList.appendChild(card);
