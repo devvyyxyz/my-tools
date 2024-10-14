@@ -15,8 +15,8 @@
     },
     {
         "title": "Link Detection",
-        "description": "This rule detects URLs and prevents users from posting links.",
-        "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+        "description": "This rule detects URLs and prevents user from posting links.",
+        "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([--zA-Z0-9()@:%_\\+.~#?&//=]*)",
         "example": "\"http://example.com\" or \"https://discord.gg/abcdef\"",
         "category": "Link Filtering"
     },
@@ -53,20 +53,111 @@
         "description": "This rule blocks .zip links.",
         "regex": "/(http\\w?:\\/\\/\\S*\\.zip)/g",
         "example": "file.zip",
-        "category": "Link Filtering"
+        "category": "File Filtering"
     },
     {
         "title": ".exe Link Blocker",
-        "description": "This rule blocks .zip links.",
+        "description": "This rule blocks .exe links.",
         "regex": "/(http\\w?:\\/\\/\\S*\\.exe)/g",
         "example": "file.exe",
-        "category": "Link Filtering"
+        "category": "File Filtering"
     },
     {
         "title": "Inline URL Blocker",
         "description": "This rule blocks inline URLs.",
         "regex": "/(?m)((\\[.+\\]\\(\\w+\\:\\/\\/.+\\)))/g",
         "example": "[example](http://example.com)",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "Markdown Link Blocker",
+        "description": "This rule blocks markdown links with URLs.",
+        "regex": "/\\[(<?https?:\\/\\/\\S+>?)\\]\\((<?https?:\\/\\/\\S+>?)\\)/g",
+        "example": "[https://example.com](https://example.com)",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "Discord Markdown Link Blocker",
+        "description": "This rule blocks markdown links to Discord URLs.",
+        "regex": "/\\[.+?\\]\\(<?https?:\\/\\/discord\\.(?:gg|com)\\/.+?>?.*?\\)/g",
+        "example": "[Discord](https://discord.gg/example)",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "General Markdown Link Blocker",
+        "description": "This rule blocks general markdown links.",
+        "regex": "/\\[[^\\]]+\\]\\([^\\)]+\\)/g",
+        "example": "[example](http://example.com)",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "Multiline Markdown Link Blocker",
+        "description": "This rule blocks multiline markdown links.",
+        "regex": "/\\[.*\\n*.*\\]\\(\\s*<?(?:https?:\\/\\/)?[a-z0-9_\\-\\.]*[a-z0-9_\\-]+\\.[a-z]{2,}.*>?\\s*\\)/g",
+        "example": "[example\nlink](http://example.com)",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "Domain Markdown Link Blocker",
+        "description": "This rule blocks markdown links with domain names.",
+        "regex": "/\\[.*[a-z0-9_\\-]+\\.[a-z]{2,}[\\/]?.*\\]\\(<?(?:https?:\\/\\/)?[a-z0-9_\\-\\.]*[a-z0-9_\\-]+\\.[a-z]{2,}.*>?\\)/g",
+        "example": "[example.com](http://example.com)",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "Unicode Combining Marks Blocker",
+        "description": "This rule blocks sequences of three or more Unicode combining marks.",
+        "regex": "/\\p{M}{3,}/gu",
+        "example": "a\u0301\u0301\u0301 (a followed by three combining acute accents)",
+        "category": "Content Filtering"
+    },
+    {
+        "title": "Markdown Header Blocker",
+        "description": "This rule blocks markdown headers.",
+        "regex": "/^#\\s.*$/gm",
+        "example": "# Header",
+        "category": "Content Filtering"
+    },
+    {
+        "title": "Email Address Blocker",
+        "description": "This rule blocks email addresses.",
+        "regex": "/[a-z0-9_\\-\\.\\+]+@[a-z0-9_\\-\\.]*[a-z0-9_\\-]+\\.[a-z]{2,}/g",
+        "example": "example@example.com",
+        "category": "Content Filtering"
+    },
+    {
+        "title": "Ping Blocker",
+        "description": "This rule blocks pings of roles and members.",
+        "regex": "/<@!?&?[0-9]+>/g",
+        "example": "<@1234567890> or <@&1234567890>",
+        "category": "Mention Filtering"
+    },
+    {
+        "title": "Emoji Spam Blocker",
+        "description": "This rule blocks messages with more than 12 emojis.",
+        "regex": "/((?s)(<a?:[a-z_0-9]+:[0-9]+>|\\p{Extended_Pictographic}|\\p{Emoji}).*){13,}/gu",
+        "example": "😀😀😀😀😀😀😀😀😀😀😀😀😀",
+        "category": "Spam"
+    },
+    {
+        "title": "Newline Spam Blocker",
+        "description": "This rule blocks messages with more than 5 newlines.",
+        "regex": "/(\\n.*){6,}/g",
+        "example": "Line 1\nLine 2\nLine 3\nLine 4\nLine 5\nLine 6",
+        "category": "Spam"
+    },
+    {
+        "title": "Discord OAuth Link Blocker",
+        "description": "This rule blocks Discord OAuth links.",
+        "regex": "/(?:https?:\\/\\/)?(?:www\\.)?discord\\.com(?:\\/api)?\\/oauth2\\/authorize/g",
+        "example": "https://discord.com/oauth2/authorize or discord.com/api/oauth2/authorize",
+        "category": "Link Filtering"
+    },
+    {
+        "title": "Discord Third-Party Link Blocker",
+        "description": "This rule blocks Discord third-party invite links.",
+        "regex": "/(?:https?:\\/\\/)?(?:www\\.)?(?:dsc\\.gg|invite\\.gg+|discord\\.link)\\/[a-z0-9-_]+/g",
+        "example": "https://dsc.gg/example or https://invite.gg/example or https://discord.link/example",
         "category": "Link Filtering"
     }
 ]
