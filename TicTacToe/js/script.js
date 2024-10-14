@@ -28,8 +28,8 @@ function initScore() {
 }
 
 function updateScoreboard() {
-  document.getElementById("xScore").textContent = `X: ${scores.X}`;
-  document.getElementById("oScore").textContent = `O: ${scores.O}`;
+  document.getElementById("scoreX").textContent = scores.X;
+  document.getElementById("scoreO").textContent = scores.O;
 }
 
 function handleCellClick(event) {
