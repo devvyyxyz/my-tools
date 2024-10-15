@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #121212; /* Dark mode background */
+  color: #ffffff; /* Dark mode text color */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,16 +10,18 @@ body {
 }
 
 .container {
-  background-color: #fff;
+  background-color: #333; /* Dark mode container background */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 600px; /* Set a maximum width for the container */
   text-align: center;
 }
 
 h1 {
   margin-bottom: 20px;
+  color: #ffffff; /* Dark mode heading color */
 }
 
 .converter {
@@ -28,12 +31,16 @@ h1 {
 
 textarea {
   width: 100%;
+  max-width: 100%; /* Ensure textarea does not exceed container width */
   height: 100px;
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #666; /* Dark mode border */
   border-radius: 4px;
   resize: none;
+  background-color: #444; /* Dark mode textarea background */
+  color: #ffffff; /* Dark mode textarea text color */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .dropdown {
@@ -47,8 +54,11 @@ select {
   flex: 1;
   padding: 10px;
   margin-right: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #666; /* Dark mode border */
   border-radius: 4px;
+  background-color: #444; /* Dark mode select background */
+  color: #ffffff; /* Dark mode select text color */
+  max-width: 48%; /* Ensure select does not exceed container width */
 }
 
 button {
