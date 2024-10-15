@@ -3,81 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Comparison Tool</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Image Editor</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-mode">
     <header>
-        <h1>Image Comparison Tool</h1>
+        <h1>Image Editor</h1>
     </header>
-
     <main>
-        <section class="upload-section">
-            <h2>Upload Images</h2>
-            <input type="file" id="file-input" accept=".jpg, .jpeg, .png">
-        </section>
-
-        <section class="comparison-section">
-            <h2>Comparison</h2>
-            <div class="comparison-container">
-                <div class="comparison-wrapper">
-                    <div class="comparison-image" id="original-image">
-                        <img src="default.png" alt="Original Image">
-                    </div>
-                    <div class="comparison-image" id="modified-image">
-                        <canvas id="modified-canvas"></canvas>
-                    </div>
-                </div>
-                <button id="download-modified-btn">Download Modified Image</button>
-                <button id="reset-btn">Reset Image and Filters</button>
+        <div class="image-comparison">
+            <div>
+                <h2>Original Image</h2>
+                <img id="original-image" src="default.png" alt="Original">
             </div>
-        </section>
-
-        <section class="option-section">
-            <div class="option filter-options">
-                <h2>Filters</h2>
-                <div class="filter-option">
-                    <label for="basic-filters">Basic Filters</label>
-                    <select id="basic-filters">
-                        <option value="">None</option>
-                        <option value="grayscale">Grayscale</option>
-                        <option value="sepia">Sepia</option>
-                        <option value="invert">Invert</option>
-                    </select>
-                </div>
-                <div class="filter-option">
-                    <label><input type="checkbox" class="toggle-filter" data-filter="noise"> Noise</label>
-                    <input type="range" id="noise-intensity" min="0" max="100" value="50">
-                    <input type="number" id="noise-intensity-value" name="noise-intensity-value" min="0" max="100" step="1">
-                </div>
-                <div class="filter-option">
-                    <label><input type="checkbox" class="toggle-filter" data-filter="vcrLines"> VCR</label>
-                    <input type="range" id="vcr-lines-intensity" min="0" max="100" value="50">
-                    <input type="number" id="vcr-lines-intensity-value" name="vcr-lines-intensity-value" min="1" max="100" step="1">
-                </div>
-                <div class="filter-option">
-                    <label><input type="checkbox" class="toggle-filter" data-filter="jpeg"> JPEG Compression</label>
-                    <input type="range" id="jpeg-intensity" min="0" max="100" value="70">
-                    <input type="number" id="jpeg-intensity-value" name="jpeg-intensity-value" min="0" max="100" step="1">
-                </div>
-                <div class="filter-option">
-                    <label><input type="checkbox" class="toggle-filter" data-filter="colorBleed"> Color Bleed</label>
-                    <input type="range" id="color-bleed-intensity" min="0" max="100" value="50">
-                    <input type="number" id="color-bleed-intensity-value" name="color-bleed-intensity-value" min="0" max="255" step="1">
-                </div>
-                <div class="filter-option">
-                    <label><input type="checkbox" class="toggle-filter" data-filter="vhs">VHS</label>
-                    <input type="range" id="vhs-intensity" min="0" max="100" value="50">
-                    <input type="number" id="vhs-intensity-value" name="vhs-intensity-value" min="0" max="255" step="1">
-                </div>
+            <div>
+                <h2>Edited Image</h2>
+                <img id="edited-image" src="default.png" alt="Editable">
             </div>
-        </section>
+        </div>
+        <div class="button-row">
+            <button id="download-image">Download Image</button>
+            <input type="file" id="upload-image" accept="image/*">
+            <button id="reset-image">Reset Image</button>
+        </div>
+        <h1>Filters</h1>
+        <select id="image-effect">
+            <option value="none">None</option>
+            <option value="invert">Invert</option>
+            <option value="sepia">Sepia</option>
+            <option value="grayscale">Grayscale</option>
+        </select>
+        <div class="blur-options">
+            <button id="blur-effect">Blur</button>
+            <label for="blur-amount">Amount:</label>
+            <input type="range" id="blur-amount" min="0" max="10" step="0.1" value="5">
+        </div>
+        <div class="brightness-options">
+            <button id="brightness-effect">Brightness</button>
+            <label for="brightness-amount">Amount:</label>
+            <input type="range" id="brightness-amount" min="0" max="200" step="1" value="100">
+        </div>
+        <div class="contrast-options">
+            <button id="contrast-effect">Contrast</button>
+            <label for="contrast-amount">Amount:</label>
+            <input type="range" id="contrast-amount" min="0" max="200" step="1" value="100">
+        </div>
+        <div class="hue-options">
+            <button id="hue-rotate-effect">Hue Rotate</button>
+            <label for="hue-amount">Degrees:</label>
+            <input type="range" id="hue-amount" min="0" max="360" step="1" value="0">
+        </div>
+        <div class="saturation-options">            
+            <button id="saturate-effect">Saturate</button>
+            <label for="saturate-amount">Amount:</label>
+            <input type="range" id="saturate-amount" min="0" max="200" step="1" value="100">
+        </div>
     </main>
-
-    <script src="js/upload.js"></script>
-    <script src="js/comparison.js"></script>
-    <script src="js/options.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/download.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
