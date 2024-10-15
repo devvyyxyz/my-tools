@@ -7,5 +7,6 @@
   "DiscordWebhookMaker",
   "DiscordTools",
   "Converters",
-  "DocumentEditor"
+  "DocumentEditor",
+  "VhsVideoAndImageCreator"
 ]

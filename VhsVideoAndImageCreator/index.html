@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Comparison Tool</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/upload.css">
-    <link rel="stylesheet" href="css/comparison.css">
-    <link rel="stylesheet" href="css/options.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="dark-mode">
     <header>
         <h1>Image Comparison Tool</h1>
-        <button id="mode-toggle-btn">Switch to Light Mode</button>
     </header>
 
     <main>
@@ -34,7 +29,7 @@
                     </div>
                 </div>
                 <button id="download-modified-btn">Download Modified Image</button>
-                <button id="reset-btn">Reset Image and Filters</button> <!-- Reset button for image and filters -->
+                <button id="reset-btn">Reset Image and Filters</button>
             </div>
         </section>
 
@@ -42,17 +37,16 @@
             <div class="option filter-options">
                 <h2>Filters</h2>
                 <div class="filter-option">
-                    <label><input type="checkbox" class="toggle-filter" data-filter="grayscale"> Grayscale</label>
-                </div>
-                <div class="filter-option">
-                    <label><input type="checkbox" class="toggle-filter" data-filter="sepia"> Sepia</label>
-                </div>
-                <div class="filter-option">
-                    <label><input type="checkbox" class="toggle-filter" data-filter="invert"> Invert</label>
+                    <label for="basic-filters">Basic Filters</label>
+                    <select id="basic-filters">
+                        <option value="">None</option>
+                        <option value="grayscale">Grayscale</option>
+                        <option value="sepia">Sepia</option>
+                        <option value="invert">Invert</option>
+                    </select>
                 </div>
                 <div class="filter-option">
                     <label><input type="checkbox" class="toggle-filter" data-filter="noise"> Noise</label>
-                    <!-- Add noise intensity slider -->
                     <input type="range" id="noise-intensity" min="0" max="100" value="50">
                     <input type="number" id="noise-intensity-value" name="noise-intensity-value" min="0" max="100" step="1">
                 </div>
@@ -60,23 +54,19 @@
                     <label><input type="checkbox" class="toggle-filter" data-filter="vcrLines"> VCR</label>
                     <input type="range" id="vcr-lines-intensity" min="0" max="100" value="50">
                     <input type="number" id="vcr-lines-intensity-value" name="vcr-lines-intensity-value" min="1" max="100" step="1">
-<!-- Checkbox for VCR filter -->
                 </div>
                 <div class="filter-option">
                     <label><input type="checkbox" class="toggle-filter" data-filter="jpeg"> JPEG Compression</label>
-                    <!-- Add JPEG compression intensity slider -->
                     <input type="range" id="jpeg-intensity" min="0" max="100" value="70">
                     <input type="number" id="jpeg-intensity-value" name="jpeg-intensity-value" min="0" max="100" step="1">
                 </div>
                 <div class="filter-option">
                     <label><input type="checkbox" class="toggle-filter" data-filter="colorBleed"> Color Bleed</label>
-                    <!-- Add color bleed intensity slider -->
                     <input type="range" id="color-bleed-intensity" min="0" max="100" value="50">
                     <input type="number" id="color-bleed-intensity-value" name="color-bleed-intensity-value" min="0" max="255" step="1">
                 </div>
                 <div class="filter-option">
                     <label><input type="checkbox" class="toggle-filter" data-filter="vhs">VHS</label>
-                    <!-- Add color bleed intensity slider -->
                     <input type="range" id="vhs-intensity" min="0" max="100" value="50">
                     <input type="number" id="vhs-intensity-value" name="vhs-intensity-value" min="0" max="255" step="1">
                 </div>
@@ -89,6 +79,5 @@
     <script src="js/options.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/download.js"></script>
-    <script src="js/mode-toggle.js"></script>
 </body>
 </html>
