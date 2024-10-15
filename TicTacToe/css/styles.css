@@ -12,6 +12,11 @@ body {
 .game-container {
   text-align: center;
   margin: 0; /* Removed unnecessary bottom margin */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the container takes full height */
 }
 
 h1 {
